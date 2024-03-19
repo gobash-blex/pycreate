@@ -1,3 +1,3 @@
 # pycreate
 
-A static site generator built using Python.1
+A static site generator built using Python.
