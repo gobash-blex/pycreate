@@ -33,7 +33,7 @@ def split_nodes_images(old_nodes):
         for image in node_images:
             sections = original_text.split(f"![{image[0]}]({image[1]})", 1)
             if len(sections) != 2:
-                raise ValueError("Invalid markdown, image section not closed")
+                raise ValueError("Invalid markdown syntax, image section not closed")
             if sections[0] != "":
                 new_nodes.append(TextNode(sections[0], text_type_text))
             new_nodes.append(
@@ -62,7 +62,7 @@ def split_nodes_links(old_nodes):
         for link in node_links:
             sections = original_text.split(f"[{link[0]}]({link[1]})", 1)
             if len(sections) != 2:
-                raise ValueError("Invalid markdown, link section not closed")
+                raise ValueError("Invalid markdown syntax, link section not closed")
             if sections[0] != "":
                 new_nodes.append(TextNode(sections[0], text_type_text))
             new_nodes.append(
